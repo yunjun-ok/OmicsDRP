@@ -1,0 +1,67 @@
+{
+  "target_file": "data/ccle_processed/RNA_combat.csv",
+  "rename_map_trained_symbol_to_ccle_column": {
+    "ALS2CR12": "FLACC1",
+    "RTFDC1": "RTF2",
+    "FAM26E": "CALHM5",
+    "DIRC2": "SLC49A4",
+    "TARSL2": "TARS3",
+    "ARMC4": "ODAD2",
+    "KIAA0556": "KATNIP",
+    "FAM122C": "PABIR3",
+    "TMEM57": "MACO1",
+    "FAM19A2": "TAFA2",
+    "NARFL": "CIAO3",
+    "CD3EAP": "POLR1G",
+    "IARS": "IARS1",
+    "MKL1": "MRTFA",
+    "ATP5J": "ATP5PF",
+    "CTAGE5": "MIA2",
+    "PAPD7": "TENT4A",
+    "TCP10": "TCP10L3",
+    "MARC2": "MTARC2",
+    "TCTEX1D4": "DYNLT4",
+    "ATP5G2": "ATP5MC2",
+    "KIAA1462": "JCAD",
+    "FAM57B": "TLCD3B",
+    "CECR6": "TMEM121B",
+    "FAM69C": "DIPK1C",
+    "SSFA2": "ITPRID2",
+    "ATP5E": "ATP5F1E",
+    "MARCH3": "MARCHF3",
+    "CCDC94": "YJU2",
+    "WISP1": "CCN4",
+    "WARS": "WARS1",
+    "TMEM8C": "MYMK",
+    "FAM26F": "CALHM6"
+  },
+  "genuinely_missing_no_candidate": [
+    "SPATA5L1",
+    "S100A7L2",
+    "FAM71D",
+    "ODF3L2",
+    "SMIM4",
+    "UHRF1BP1L",
+    "SOD2",
+    "CLECL1",
+    "FAM102B",
+    "KIAA2026",
+    "VNN3"
+  ],
+  "ambiguous_excluded": [
+    {
+      "trained_symbol": "QARS",
+      "candidates": [
+        "EPRS1",
+        "QARS1"
+      ]
+    },
+    {
+      "trained_symbol": "LOR",
+      "candidates": [
+        "LORICRIN",
+        "LOXL2"
+      ]
+    }
+  ]
+}

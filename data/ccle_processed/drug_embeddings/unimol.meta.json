@@ -1,0 +1,11 @@
+{
+  "model": "unimol",
+  "checkpoint": "mol_pre_all_h_220816.pt",
+  "dim": 512,
+  "n": 1389,
+  "pooling": "CLS (cls_repr molecular-level representation)",
+  "unimol_tools_version": "0.1.6",
+  "source": "data/ccle_processed/PRISM_drug_smiles.csv",
+  "notes": "Frozen pretrained Uni-Mol (unimolv1, 84m) via unimol_tools 0.1.6 UniMolRepr.get_repr(return_atomic_reprs=False) for the CCLE/PRISM external-eval drug set (omicsdrp ablation drug-encoder variants only). 3D conformers generated internally by RDKit ETKDG (remove_hs=False). Computed on CPU (use_cuda=False), matching original recipe. Reproduction validated against original GDSC2 unimol.npy row 0 (Camptothecin): exact match (diff 0.0). All 1389 molecules produced valid conformers -- no zero-vector fallbacks. float32; row i == prism_name row i in PRISM_drug_smiles.csv.",
+  "zero_fallback_drug_idx": []
+}

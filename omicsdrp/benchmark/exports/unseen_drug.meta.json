@@ -1,0 +1,40 @@
+{
+  "split_mode": "unseen_drug",
+  "outer_folds": 5,
+  "seed": 2024,
+  "inner_val_frac": 0.15,
+  "n_cluster_cell": 6,
+  "n_cluster_drug": 8,
+  "n_cell": 873,
+  "n_drug": 231,
+  "n_pairs": 186948,
+  "baseline_tag_prefix": "SNP+MET+CNV+RNA__attention__morgan",
+  "verification": "verified identical to SNP+MET+CNV+RNA__attention__morgan__unseen_drug__cd5222",
+  "fold_sizes": {
+    "1": {
+      "train": 125706,
+      "val": 22852,
+      "test": 38390
+    },
+    "2": {
+      "train": 127809,
+      "val": 22570,
+      "test": 36569
+    },
+    "3": {
+      "train": 128552,
+      "val": 22327,
+      "test": 36069
+    },
+    "4": {
+      "train": 127974,
+      "val": 21523,
+      "test": 37451
+    },
+    "5": {
+      "train": 127111,
+      "val": 21368,
+      "test": 38469
+    }
+  }
+}

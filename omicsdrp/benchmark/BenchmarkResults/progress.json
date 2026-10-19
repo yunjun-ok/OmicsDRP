@@ -1,0 +1,26 @@
+[
+  {
+    "model": "graphdrp_gcn",
+    "split": "mixed",
+    "regime": "ensemble",
+    "status": "ok",
+    "seconds": 2299.2,
+    "summary": "5 folds | rmse=1.1670 pearson=0.9113 spearman=0.8769 r2=0.8295 n_params_total=1373039.0000"
+  },
+  {
+    "model": "graphdrp_gat",
+    "split": "mixed",
+    "regime": "ensemble",
+    "status": "ok",
+    "seconds": 3049.3,
+    "summary": "5 folds | rmse=1.2424 pearson=0.9022 spearman=0.8709 r2=0.8064 n_params_total=1033773.0000"
+  },
+  {
+    "model": "graphdrp_gat_gcn",
+    "split": "mixed",
+    "regime": "ensemble",
+    "status": "ok",
+    "seconds": 3164.1,
+    "summary": "5 folds | rmse=1.1264 pearson=0.9174 spearman=0.8842 r2=0.8411 n_params_total=4059845.0000"
+  }
+]

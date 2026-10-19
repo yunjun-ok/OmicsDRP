@@ -32,10 +32,39 @@ python Save_Results.py \
 ```
 
 
+## Final Framework: OmicsDRP (MoLFormer) & Inference
+The final OmicsDRP framework uses all four omics (SNP, MET, CNV, RNA), the attention-based cell encoder, and frozen MoLFormer drug embeddings (`ibm/MoLFormer-XL-both-10pct`). It is a 5-fold ensemble trained on GDSC2; the weights are in [`OmicsDRP_final/weights/`](OmicsDRP_final/weights). Each fold checkpoint also stores the gene-wise scaler (mean/std from GDSC training cells) used to normalize new data.
+
+`OmicsDRP_final/predict.py` runs the full pipeline: raw omics → per-fold normalization with the saved GDSC scaler → fold-model prediction → ensemble average.
+
+###### Example: external validation on DepMap (CCLE omics + PRISM-MTS response)
+```text
+cd OmicsDRP_final
+python predict.py --input example/depmap_prism_mts --out depmap_predictions.parquet
+```
+The example contains 666 DepMap cell lines × 172 PRISM drugs (39,433 measured pairs) and reproduces the reported external result (Pearson 0.546, Spearman 0.455).
+
+To run on your own data, use the same layout as `example/depmap_prism_mts/`:
+| File | Content |
+|---|---|
+| `omics.pth` | `{"cell_ids": [N], "gene_data": {gene: float32 tensor [N, 4]}}`, columns `[SNP, MET, CNV, RNA]`, same 909 PGKB genes as `data/gene_list.txt` |
+| `drugs.csv` | `drug_name, smiles` (row order = embedding rows) |
+| `drug_embeddings/molformer.npy` | float32 `[n_drug, 768]`, MoLFormer mean-pooled token embeddings |
+| `ic50.csv` (optional) | `cell_id, drug_name, ln_ic50`; if given, only these pairs are predicted and metrics are printed, otherwise all cell × drug pairs are predicted |
+
+The DepMap omics in the example were batch-corrected to GDSC with ComBat (R `sva`, via `rpy2`) before normalization.
+
+## Computational Environment
+* GPU: NVIDIA RTX 4090, CUDA 12 (PyTorch 2.3.0+cu121)
+* Deterministic cuDNN operations were enabled during training
+* Drug representations: MoLFormer `ibm/MoLFormer-XL-both-10pct` (Hugging Face)
+* Batch correction: ComBat from the R `sva` package, called via `rpy2`
+* PPI network analysis: STRING-DB v12.0
+
 ## Dependencies
 * `python` = 3.9.19
 * `pytorch` = 2.3.0
 * `pandas` = 1.5.3
-* `numpy` = 1.12.6
+* `numpy` = 1.26.4
 * `scipy` = 1.13.1
 * `matplotlib` = 3.9.2

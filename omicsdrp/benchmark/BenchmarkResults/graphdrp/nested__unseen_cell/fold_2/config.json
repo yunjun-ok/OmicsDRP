@@ -1,0 +1,67 @@
+{
+  "model": "graphdrp",
+  "split_mode": "unseen_cell",
+  "regime": "nested",
+  "fold": 2,
+  "n_eval_pairs": 37790,
+  "fold_signature": "6125d327f8c390f7",
+  "export_meta": {
+    "split_mode": "unseen_cell",
+    "outer_folds": 5,
+    "seed": 2024,
+    "inner_val_frac": 0.15,
+    "n_cluster_cell": 6,
+    "n_cluster_drug": 8,
+    "n_cell": 873,
+    "n_drug": 231,
+    "n_pairs": 186948,
+    "baseline_tag_prefix": "SNP+MET+CNV+RNA__attention__morgan",
+    "verification": "verified identical to SNP+MET+CNV+RNA__attention__morgan__unseen_cell__f89c87",
+    "fold_sizes": {
+      "1": {
+        "train": 127945,
+        "val": 21564,
+        "test": 37439
+      },
+      "2": {
+        "train": 128338,
+        "val": 20820,
+        "test": 37790
+      },
+      "3": {
+        "train": 128681,
+        "val": 20690,
+        "test": 37577
+      },
+      "4": {
+        "train": 128288,
+        "val": 21339,
+        "test": 37321
+      },
+      "5": {
+        "train": 128394,
+        "val": 21733,
+        "test": 36821
+      }
+    }
+  },
+  "config": {
+    "epochs_max": 100,
+    "patience": 10,
+    "lr": 0.0001,
+    "batch_size": 1024,
+    "seed": 2024,
+    "seed_used": 2026,
+    "device": "cuda",
+    "smoke": false
+  },
+  "conda_env": "benchmark_graphdrp",
+  "scores_are_performance": true,
+  "best_early_stop_rmse": 0.037174224853515625,
+  "dropped_pairs_no_native_features": {
+    "fit": 0,
+    "early_stop": 0,
+    "eval": 0
+  },
+  "train_seconds": 103.4
+}

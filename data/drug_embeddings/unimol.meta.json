@@ -1,0 +1,10 @@
+{
+  "model": "unimol",
+  "checkpoint": "mol_pre_all_h_220816.pt",
+  "dim": 512,
+  "pooling": "CLS (cls_repr molecular-level representation)",
+  "n": 241,
+  "notes": "Frozen pretrained Uni-Mol (unimolv1, 84m) via unimol_tools 0.1.6 UniMolRepr.get_repr(return_atomic_reprs=False), cls_repr per molecule. 3D conformers generated internally by RDKit ETKDG (remove_hs=False). Computed on CPU. Rows aligned to drugs_ordered.csv drug_idx order. Fallback zero vectors for drug_idx: [].",
+  "unimol_tools_version": "0.1.6",
+  "zero_fallback_drug_idx": []
+}

@@ -1,0 +1,11 @@
+{
+  "model": "graphormer",
+  "checkpoint": "clefourrier/graphormer-base-pcqm4mv2",
+  "dim": 768,
+  "n": 1389,
+  "pooling": "graph_token_last_layer (virtual/CLS node hidden state, position 0 of final encoder layer -- model.encoder.graph_encoder(...) second return value, i.e. pre-lm_head-transform, matching original GDSC2 graphormer.npy)",
+  "transformers_version": "4.37.2",
+  "ogb_version": "1.3.6",
+  "source": "data/ccle_processed/PRISM_drug_smiles.csv",
+  "notes": "Frozen pretrained Graphormer-base (PCQM4Mv2) for the CCLE/PRISM external-eval drug set (omicsdrp ablation drug-encoder variants only). SMILES->graph via ogb.utils.smiles2graph, then HF preprocess_item + GraphormerDataCollator. Reproduction validated against original GDSC2 graphormer.npy row 0 (Camptothecin): max abs diff 6.7e-06. float32; row i == prism_name row i in PRISM_drug_smiles.csv."
+}

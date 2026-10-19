@@ -1,0 +1,9 @@
+{
+  "model": "chemberta",
+  "checkpoint": "DeepChem/ChemBERTa-77M-MLM",
+  "pooling": "mean_over_tokens_with_attention_mask",
+  "transformers_version": "5.13.0",
+  "notes": "Frozen pretrained embeddings; mean-pooled last_hidden_state over attention mask; float32; row i == drug_idx i.",
+  "dim": 384,
+  "n": 241
+}

@@ -1,0 +1,20 @@
+{
+  "tag": "SNP+MET+CNV+RNA__noise-SNP+MET+CNV+RNA__attention__molformer__unseen_cell__5e9fe0",
+  "n_folds": 5,
+  "mse_mean": 2.442215227260186,
+  "mse_std": 0.15063240289531235,
+  "rmse_mean": 1.5620054792004925,
+  "rmse_std": 0.04851917361028567,
+  "mae_mean": 1.1849686275854736,
+  "mae_std": 0.039051401662087246,
+  "r2_mean": 0.6946583558023608,
+  "r2_std": 0.014686629607358089,
+  "pearson_mean": 0.8358045096789676,
+  "pearson_std": 0.008973824106576583,
+  "spearman_mean": 0.7741626027055435,
+  "spearman_std": 0.009182069035088506,
+  "n_mean": 37389.6,
+  "n_std": 324.3119485927091,
+  "loss_mean": 2.441501518514179,
+  "loss_std": 0.1494956461831794
+}

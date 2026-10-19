@@ -1,0 +1,10 @@
+{
+  "model": "graphormer",
+  "checkpoint": "clefourrier/graphormer-base-pcqm4mv2",
+  "dim": 768,
+  "pooling": "graph_token_last_layer (virtual/CLS node hidden state, position 0 of final encoder layer, i.e. graph_rep = same representation fed to the pretrained classification head)",
+  "n": 241,
+  "transformers_version": "4.37.2",
+  "ogb_version": "1.3.6",
+  "notes": "Frozen pretrained Graphormer-base (PCQM4Mv2). SMILES->graph via ogb.utils.smiles2graph (OGB node/edge features), then HF preprocess_item + GraphormerDataCollator (Cython algos_graphormer floyd_warshall/gen_edge_input compiled with Cython 0.29.37; transformers 4.37.2 which still ships the Graphormer integration). Embedding = last-layer graph-token hidden state before the LM/classification head. Rows in drugs_ordered.csv order (row i == drug_idx i)."
+}

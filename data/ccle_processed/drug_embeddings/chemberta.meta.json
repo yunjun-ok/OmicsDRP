@@ -1,0 +1,10 @@
+{
+  "model": "chemberta",
+  "checkpoint": "DeepChem/ChemBERTa-77M-MLM",
+  "dim": 384,
+  "n": 1389,
+  "pooling": "mean_over_tokens_with_attention_mask",
+  "transformers_version": "5.13.0",
+  "source": "data/ccle_processed/PRISM_drug_smiles.csv",
+  "notes": "Frozen pretrained embeddings for the CCLE/PRISM external-eval drug set (omicsdrp ablation drug-encoder variants only -- DeepTTA/PaccMann consume raw SMILES directly). Reproduction validated against the original GDSC2 chemberta.npy/molformer.npy row 0 (Camptothecin): max abs diff <1e-6. float32; row i == prism_name row i in PRISM_drug_smiles.csv."
+}
